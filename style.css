@@ -1,0 +1,39 @@
+body{
+    font-size: 62.5%;
+}
+.calculator{
+    background: gray;
+    width: 280px;
+    box-shadow: 5px 5px 30px 0 #000;
+}
+input{
+    width: 18rem;
+    box-sizing: border-box;
+    padding:1rem 2rem;
+    border: 3px solid;
+    margin-bottom: .5rem;
+    font-size: 1.6rem;
+    outline: 0;
+}
+.btn{
+    background: #000;
+    color: rgb(200, 200, 166);
+    padding: 1.5rem 2rem;
+    font-size: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+button:hover{
+    background: grey;
+    color: #fff;
+    cursor: pointer;
+}
+.backspace__btn{
+    color: red;
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 1rem;
+}
