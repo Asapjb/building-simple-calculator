@@ -3,49 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/cbf11d33e4.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
     <div class="calculator">
       <input id="display" />
       <div>
-        <button class="btn" onclick="display.value= null">AC</button>
-        <button class="btn" onclick="display.value= '+/-'">+/-</button>
-        <button class="btn" onclick="display.value= '%'">%</button>
-        <button class="btn" onclick="display.value += '/'">/</button>
+        <button class="btn" onclick="clearDisplay()">AC</button>
+        <button class="btn" onclick="button('+/-')">+/-</button>
+        <button class="btn" onclick="button('%')">%</button>
+        <button class="btn" onclick="button('/')">/</button>
       </div>
       <div>
-        <button class="btn" onclick="display.value += 7">7</button>
-        <button class="btn" onclick="display.value += 8">8</button>
-        <button class="btn" onclick="display.value += 9">9</button>
-        <button class="btn" onclick="display.value += '*'">x</button>
+        <button class="btn" onclick="button(7)">7</button>
+        <button class="btn" onclick="button(8)">8</button>
+        <button class="btn" onclick="button(9)">9</button>
+        <button class="btn" onclick="button('*')">x</button>
       </div>
       <div>
-        <button class="btn" onclick="display.value += 4">4</button>
-        <button class="btn" onclick="display.value += 5">5</button>
-        <button class="btn" onclick="display.value +=  6">6</button>
-        <button class="btn" onclick="display.value +=  '-'">-</button>
+        <button class="btn" onclick="button(4)">4</button>
+        <button class="btn" onclick="button(5)">5</button>
+        <button class="btn" onclick="button(6)">6</button>
+        <button class="btn" onclick="button('-')">-</button>
       </div>
       <div>
-        <button class="btn" onclick=" display.value +=  1">1</button>
-        <button class="btn" onclick=" display.value += 2">2</button>
-        <button class="btn" onclick=" display.value +=  3">3</button>
-        <button class="btn" onclick=" display.value +=  '+'">+</button>
+        <button class="btn" onclick="button(1)">1</button>
+        <button class="btn" onclick="button(2)">2</button>
+        <button class="btn" onclick="button(3)">3</button>
+        <button class="btn" onclick="button('+')">+</button>
       </div>
       <div>
-        <button class="btn" onclick=" display.value += 0">0</button>
-        <button class="btn" onclick=" display.value += '.'">.</button>
+        <button class="btn" onclick="button(0)">0</button>
+        <button class="btn" onclick="button('.')">.</button>
         <button class="btn" onclick="calculate()">=</button>
-        <button class="backspace__btn btn" onclick=" cancel()"><--</button>
+        <button class="backspace__btn btn" onclick=" cancelButton()">
+          <i class="fa-solid fa-delete-left"></i>
+        </button>
       </div>
     </div>
     <script type="text/javascript">
+      function button(btn) {
+        display.value += btn;
+      }
       function calculate() {
         display.value = eval(display.value);
       }
-      function cancel() {
+      function cancelButton() {
         display.value = display.value.slice(0, -1);
+      }
+      function clearDisplay() {
+        display.value = "";
       }
     </script>
   </body>
